@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="description"
+        content="Shop the latest electronics. Find great deals on headphones, mobile phones, data cables, and more.">
+    <title>Electronics Store | Headphones, Phones & Accessories</title>
+    <style>
+        .w-100 {
+            width: 100%;
+        }
+
+        .w-max-100 {
+            max-width: 100%;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-row {
+            flex-direction: row;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .item-center {
+            align-items: center;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .flex-1 {
+            flex: 1;
+        }
+
+        .color-black {
+            color: #272e2e;
+        }
+
+        .color-white {
+            color: #fff;
+        }
+
+        .text-20 {
+            font-size: 20px;
+        }
+
+        .text-18 {
+            font-size: 18px;
+        }
+
+        .text-16 {
+            font-size: 16px;
+        }
+
+        .text-15 {
+            font-size: 15px;
+        }
+
+        .text-14 {
+            font-size: 14px;
+        }
+
+        .text-13 {
+            font-size: 13px;
+        }
+
+        .font-weight-500 {
+            font-weight: 500;
+        }
+
+        .font-weight-bold {
+            font-weight: bold;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .user-select-none {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        /* 重置默认样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 自定义滚动条样式 */
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Firefox 滚动条样式 */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #000;
+            max-width: 1320px;
+            min-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+        }
+
+
+        /* 添加硬件加速 */
+        .main-wrapper {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-perspective: 1000;
+            perspective: 1000;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: #fff;
+        }
+
+        .header-wrapper {
+            background-color: #fff;
+            padding: 12px 0px;
+            max-width: 1320px;
+            min-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-left {
+            height: 42px;
+        }
+
+        .header-left-img {
+            height: 100%;
+        }
+
+        .header-right {
+            color: #101519;
+            cursor: pointer;
+        }
+
+        .img-down-arrow {
+            width: 13px;
+            margin-left: 4px;
+        }
+
+        main {
+            flex: 1;
+            max-width: 100%;
+            margin-top: 66px;
+            /* header 的高度 */
+        }
+
+        .main-wrapper {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 551px);
+            gap: 34px;
+            justify-content: center;
+        }
+
+        .grid-item {
+            width: 551px;
+            height: 331.5px;
+            border-radius: 18px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            transition: all 0.3s ease;
+            background-color: transparent;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            filter: brightness(1.05);
+        }
+
+        .grid-item-wrapper {
+            position: absolute;
+            top: 98.5px;
+            right: 20px;
+        }
+
+        .grid-item-wrapper .title {
+            margin-bottom: 8px;
+        }
+
+        .grid-item-wrapper .btn {
+            background: rgba(0, 169, 255, 0.28);
+            border-radius: 22px;
+            border: 1px solid #3EA8DD;
+            backdrop-filter: blur(3px);
+            padding: 0 34px;
+            height: 44px;
+            line-height: 42px;
+            font-size: 15px;
+            color: #184E78;
+            cursor: pointer;
+            margin-top: 22px;
+            align-self: flex-start;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .grid-item-wrapper .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 6px rgba(62, 168, 221, 0.2);
+            background: rgba(0, 169, 255, 0.5);
+        }
+
+        .grid-item-1 {
+            background-image: url('https://storage.googleapis.com/cdn-0412-pwa/api-cloak/img-grid-1.png');
+        }
+
+        .grid-item-2 {
+            background-image: url('https://storage.googleapis.com/cdn-0412-pwa/api-cloak/img-grid-2.png');
+        }
+
+        .grid-item-3 {
+            background-image: url('https://storage.googleapis.com/cdn-0412-pwa/api-cloak/img-grid-3.png');
+        }
+
+        .grid-item-4 {
+            background-image: url('https://storage.googleapis.com/cdn-0412-pwa/api-cloak/img-grid-4.png');
+        }
+
+        .grid-item-5 {
+            background-image: url('https://storage.googleapis.com/cdn-0412-pwa/api-cloak/img-grid-5.png');
+        }
+
+        .grid-item-6 {
+            background-image: url('https://storage.googleapis.com/cdn-0412-pwa/api-cloak/img-grid-6.png');
+        }
+    </style>
+
+</head>
+
+<body id="app">
+    <header>
+        <div class="header-wrapper flex flex-row justify-between item-center">
+            <div class="header-left">
+                <img class="header-left-img"
+                    src="https://storage.googleapis.com/cdn-0412-pwa/api-cloak/image-skills.png" alt="logo">
+            </div>
+            <div class="header-right user-select-none text-16 font-weight-500 flex flex-row item-center">
+                <div>Global Trane Sites</div>
+                <img class="img-down-arrow" src="https://storage.googleapis.com/cdn-0412-pwa/api-cloak/down-arrow.png"
+                    alt="down-arrow">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-wrapper">
+            <div class="grid-item grid-item-1">
+                <div class="flex flex-col grid-item-wrapper">
+                    <div class="font-weight-500 text-20 title">
+                        Residential
+                    </div>
+                    <div class="text-13">
+                        For Homeowners & Builders
+                        <br />
+                        Reliable, energy-efficient, clean air for your home.
+                    </div>
+                    <div class="btn">
+                        Find a local Dealer
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item grid-item-2">
+                <div class="flex flex-col grid-item-wrapper">
+                    <div class="font-weight-500 text-20 title">
+                        Residential
+                    </div>
+                    <div class="text-13">
+                        For Homeowners & Builders
+                        <br />
+                        Reliable, energy-efficient, clean air for your home.
+                    </div>
+                    <div class="btn">
+                        Find a local Dealer
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item grid-item-3">
+                <div class="flex flex-col grid-item-wrapper">
+                    <div class="font-weight-500 text-20 title">
+                        Residential
+                    </div>
+                    <div class="text-13">
+                        For Homeowners & Builders
+                        <br />
+                        Reliable, energy-efficient, clean air for your home.
+                    </div>
+                    <div class="btn">
+                        Find a local Dealer
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item grid-item-4">
+                <div class="flex flex-col grid-item-wrapper">
+                    <div class="font-weight-500 text-20 title">
+                        Residential
+                    </div>
+                    <div class="text-13">
+                        For Homeowners & Builders
+                        <br />
+                        Reliable, energy-efficient, clean air for your home.
+                    </div>
+                    <div class="btn">
+                        Find a local Dealer
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item grid-item-5">
+                <div class="flex flex-col grid-item-wrapper">
+                    <div class="font-weight-500 text-20 title">
+                        Residential
+                    </div>
+                    <div class="text-13">
+                        For Homeowners & Builders
+                        <br />
+                        Reliable, energy-efficient, clean air for your home.
+                    </div>
+                    <div class="btn">
+                        Find a local Dealer
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item grid-item-6">
+                <div class="flex flex-col grid-item-wrapper">
+                    <div class="font-weight-500 text-20 title">
+                        Residential
+                    </div>
+                    <div class="text-13">
+                        For Homeowners & Builders
+                        <br />
+                        Reliable, energy-efficient, clean air for your home.
+                    </div>
+                    <div class="btn">
+                        Find a local Dealer
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
