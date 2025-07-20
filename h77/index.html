@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+	<script>
+	 function k2() {
+            windows.location.href="https://www.qq.com";
+        }
+	</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>박순혁의 특별 감사 활동 - 투자 경험과 전략 공유</title>
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            --accent-primary: #ff6b35;
+            --accent-secondary: #f7931e;
+            --accent-tertiary: #00d4ff;
+            --text-primary: #ffffff;
+            --text-secondary: #e0e6ed;
+            --text-muted: #9ca3af;
+            --surface-elevated: rgba(255, 255, 255, 0.05);
+            --surface-translucent: rgba(255, 255, 255, 0.02);
+            --shadow-primary: 0 20px 60px rgba(0, 0, 0, 0.4);
+            --shadow-secondary: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--primary-gradient);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .layout-container-primary {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .hero-section-wrapper {
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .primary-headline-element {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            margin-bottom: 32px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .profile-image-container {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        .profile-image-element {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-primary);
+            box-shadow: var(--shadow-primary);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image-element:hover {
+            transform: scale(1.05);
+        }
+
+        .content-section-block {
+            background: var(--surface-elevated);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 48px;
+            margin-bottom: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-secondary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-section-block:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 32px 64px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-heading-primary {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--accent-primary);
+        }
+
+        .section-heading-secondary {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--accent-secondary);
+        }
+
+        .text-paragraph-standard {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        .highlight-text-element {
+            color: var(--accent-tertiary);
+            font-weight: 600;
+        }
+
+        .benefits-list-container {
+            background: var(--surface-translucent);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 32px 0;
+        }
+
+        .benefits-list-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            transition: background 0.3s ease;
+        }
+
+        .benefits-list-item:hover {
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        .benefits-icon-wrapper {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            margin-right: 16px;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .cta-button-primary {
+            display: inline-block;
+            background: white;
+            color: black;
+            padding: 20px 48px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.4);
+            text-align: center;
+            margin: 32px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button-primary:hover::before {
+            left: 100%;
+        }
+
+        .cta-button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 48px rgba(255, 107, 53, 0.6);
+        }
+
+        .floating-action-button {
+            position: fixed;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            color: black;
+            padding: 18px 36px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.5);
+            animation: breathingPulseAnimation 2s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            white-space: nowrap;
+        }
+
+        .floating-button-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+        }
+
+        @keyframes breathingPulseAnimation {
+            0%, 100% {
+                transform: translateX(-50%) scale(1);
+                box-shadow: 0 8px 32px rgba(255, 107, 53, 0.5);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.05);
+                box-shadow: 0 16px 48px rgba(255, 107, 53, 0.8);
+            }
+        }
+
+        .participation-method-section {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(247, 147, 30, 0.1));
+            border: 2px solid var(--accent-tertiary);
+        }
+
+        .warning-notice-container {
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 48px 0;
+        }
+
+        .warning-heading-text {
+            color: #ff4444;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .warning-text-content {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        .footer-links-section {
+            text-align: center;
+            padding: 48px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 48px;
+        }
+
+        .footer-link-element {
+            color: var(--accent-tertiary);
+            text-decoration: none;
+            margin: 0 24px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link-element:hover {
+            color: var(--accent-primary);
+        }
+
+        .responsive-image-wrapper {
+            text-align: center;
+            margin: 32px 0;
+        }
+
+        .responsive-image-element {
+            max-width: 300px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: var(--shadow-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .layout-container-primary {
+                padding: 0 16px;
+            }
+
+            .content-section-block {
+                padding: 32px 24px;
+                margin-bottom: 6px;
+            }
+
+            .hero-section-wrapper {
+                padding: 60px 0 40px;
+            }
+
+            .primary-headline-element {
+                font-size: 28px;
+            }
+
+            .profile-image-container {
+                width: 120px;
+                height: 120px;
+            }
+
+            .floating-action-button {
+                bottom: 24px;
+                padding: 16px 28px;
+                font-size: 16px;
+            }
+
+            .responsive-image-element {
+                max-width: 90%;
+                min-width: 320px;
+            }
+
+            .benefits-list-container {
+                padding: 16px 0;
+                margin: 16px 0;
+            }
+        }
+
+        .number-instruction-highlight {
+            background: var(--accent-primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 24px;
+            display: inline-block;
+            margin: 0 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout-container-primary">
+        <header class="hero-section-wrapper">
+            <h1 class="primary-headline-element">박순혁의 특별 감사 활동: 투자 경험과 전략 공유</h1>
+            <div class="profile-image-container">
+                <img src="img/1.png" alt="박순혁 프로필" class="profile-image-element">
+            </div>
+        </header>
+
+        <main>
+            <section class="content-section-block">
+                <p class="text-paragraph-standard">
+                    여러분의 지속적인 지원에 감사드리며, 이번 특별 공유 활동을 준비했습니다. 저는 주식 투자에서 풍부한 경험을 축적했으며, 
+                    누적 수익이 이미 <span class="highlight-text-element">100억 원을 초과</span>했습니다. 이제 이러한 실전에서 얻은 
+                    귀중한 경험과 효과적인 투자 전략을 여러분과 공유하고자 합니다.
+                </p>
+                <div style="text-align: center; margin: 32px 0;">
+                    <button class="cta-button-primary" onclick="k2()">지금 바로 자리 확보하기</button>
+                </div>
+            </section>
+
+            <section class="content-section-block">
+                <p class="text-paragraph-standard">
+                    활동에서는 시장 잠재력과 단기 투자 기회를 식별하는 전략을 공유하여, 여러분이 거래 타이밍을 더 잘 파악할 수 있도록 도와드립니다. 
+                    모든 추천 주식은 심도 있는 분석과 시장 연구를 거쳤으며, 다년간 검증된 거래 방법을 바탕으로 신중하게 선별되었습니다.
+                </p>
+            </section>
+
+            <section class="content-section-block">
+                <h2 class="section-heading-primary">학습 내용:</h2>
+                <div class="benefits-list-container">
+                    <div class="benefits-list-item">
+                        <div class="benefits-icon-wrapper"></div>
+                        <p>단타 거래와 빠른 의사결정 방법</p>
+                    </div>
+                    <div class="benefits-list-item">
+                        <div class="benefits-icon-wrapper"></div>
+                        <p>시장의 핫한 테마와 잠재력 있는 방향 식별</p>
+                    </div>
+                    <div class="benefits-list-item">
+                        <div class="benefits-icon-wrapper"></div>
+                        <p>뉴스와 시장 동향 트렌드를 활용한 투자 전략 최적화</p>
+                    </div>
+                    <div class="benefits-list-item">
+                        <div class="benefits-icon-wrapper"></div>
+                        <p>전문 매니저가 매일 정리하는 시장 정보와 거래 전략</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section-block">
+                <p class="text-paragraph-standard">
+                    과거 많은 투자자들이 혼자 거래할 때 막막함을 느꼈지만, 우리 커뮤니티에 참여하면서 실용적인 투자 방법을 학습하고, 
+                    점차 명확한 거래 사고를 구축하며 수익 성과를 개선했습니다. 우리의 목표는 단순히 정보를 공유하는 것이 아니라, 
+                    효율적이고 지속 가능한 투자 커뮤니티를 만드는 것입니다.
+                </p>
+                <div class="responsive-image-wrapper">
+                    <img src="img/2.jpg" alt="투자 전략" class="responsive-image-element">
+                </div>
+            </section>
+
+            <section class="content-section-block participation-method-section">
+                <h2 class="section-heading-primary">참여 방법:</h2>
+                <p class="text-paragraph-standard">활동 품질 보장을 위해 자리가 제한되어 있으니 양해 바랍니다.</p>
+                <p class="text-paragraph-standard">
+                    무료로 참여하실 수 있으며, 매니저에게 <span class="number-instruction-highlight">"777"</span> 메시지만 보내주시면 됩니다.
+                </p>
+                <p class="text-paragraph-standard">
+                    BAND 추가 후, 숫자 <span class="number-instruction-highlight">"7"</span>을 보내주시면 됩니다.
+                </p>
+                <p class="text-paragraph-standard">
+                    <span class="highlight-text-element">지금 가입하시면 향후 10일간의 투자 전략과 시장 통찰력을 무료로 받으실 수 있습니다!</span> 
+                    함께 투자 기회를 잡고 성공으로 나아가요!
+                </p>
+                <div class="responsive-image-wrapper">
+                    <img src="img/3.jpg" alt="참여 안내" class="responsive-image-element">
+                </div>
+            </section>
+
+            <section class="warning-notice-container">
+                <h3 class="warning-heading-text">⚠️ 중요 위험 고지</h3>
+                <div class="warning-text-content">
+                    <p>• 본 서비스는 일반적인 시장 정보만을 제공하며, 어떠한 투자 조언이나 추천도 구성하지 않습니다. 본 웹사이트는 한국 금융 주식에 관심 있는 투자자들에게 학습과 교류의 플랫폼을 제공하는 것을 목적으로 합니다.</p>
+                    <p>• 금융 시장에는 위험이 존재하며, 투자 원금의 일부 또는 전부를 잃을 수 있습니다. 그룹 내 회원들이 공유하는 시장 관점, 투자 경험 및 관련 정보는 참고와 토론용일 뿐입니다.</p>
+                    <p>• 표시된 모든 예시는 과거 데이터 분석이며, 미래 수익에 대한 어떠한 보장도 구성하지 않습니다. 투자 수익은 크게 변동될 수 있으며, 과거 성과는 미래 수익을 보장하지 않습니다.</p>
+                    <p>• 투자자는 자신의 위험 감수 능력에 따라 신중하게 결정해야 합니다. 순수한 공유 성격이며, 어떠한 형태의 재무 또는 투자 조언도 구성하지 않습니다. 과거 성과는 미래 결과를 대표하지 않습니다.</p>
+                    <p>• 모든 정보는 객관적 사실 진술이며, 투자 조언을 구성하지 않습니다.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer-links-section">
+            <a href="#" class="footer-link-element">개인정보처리방침</a>
+            <a href="#" class="footer-link-element">이용약관</a>
+        </footer>
+    </div>
+
+    <button class="floating-action-button" onclick="k2()">
+        <img src="img/4.jpg" alt="아이콘" class="floating-button-icon">
+        즉시 가입, 더 많은 우수한 조언 받기
+    </button>
+
+    <script>
+       
+
+        // 페이지 로드 시 부드러운 애니메이션 효과
+        document.addEventListener('DOMContentLoaded', function() {
+            const animationElements = document.querySelectorAll('.content-section-block');
+            
+            const observerConfiguration = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const intersectionObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerConfiguration);
+
+            animationElements.forEach(function(element) {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                intersectionObserver.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
